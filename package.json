@@ -1,0 +1,10 @@
+{
+    "name":"jenkins-js-client",
+    "description":"Jenkins JS Client",
+    "version":"0.0.1",
+    "private":true,
+    "directories" : { "lib": "./lib" },
+    "dependencies":{
+        "request": "*"
+    }
+}
