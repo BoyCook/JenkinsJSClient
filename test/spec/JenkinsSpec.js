@@ -3,8 +3,8 @@ var Jenkins = require('../../lib/jenkins').Jenkins;
 describe('Jenkins', function () {
     var jenkins;
 
-    var error = function (code, data) {
-        console.log('ERROR [%s]', JSON.stringify(code));
+    var error = function (err, response, body) {
+        console.log('ERROR [%s]', err);
         done();
     };
 
