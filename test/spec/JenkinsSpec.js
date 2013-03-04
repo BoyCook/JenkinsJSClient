@@ -17,7 +17,7 @@ describe('Jenkins', function () {
     it('should get Jenkins core', function (done) {
         jenkins.getCore(error,
             function (data) {
-                expect(data.jobs).toBeDefined();
+                expect(JSON.parse(data).jobs).toBeDefined();
                 done();
             }
         );
@@ -26,7 +26,7 @@ describe('Jenkins', function () {
     it('should get queue', function (done) {
         jenkins.getQueue(error,
             function (data) {
-                expect(data.items).toBeDefined();
+                expect(JSON.parse(data).items).toBeDefined();
                 done();
             }
         );
@@ -35,6 +35,7 @@ describe('Jenkins', function () {
     it('should get users repos', function (done) {
         jenkins.getLoad(error,
             function (data) {
+				data = JSON.parse(data);
                 expect(data.busyExecutors).toBeDefined();
                 expect(data.queueLength).toBeDefined();
                 expect(data.totalExecutors).toBeDefined();
